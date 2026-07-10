@@ -14,10 +14,26 @@
       </div>
       <main>
         <h1>Название</h1>
-        <form action="#" method="POST">
-            <input type="text" id="name" name="name" required>
+          <form action="#" method="POST">
+            <input type="text" id="name" name="name" required placeholder="Норма.АВТ.Потери технологические">
+            <h2>Тип зависимости</h2>
+            <div class="select-row">
+            <select id="type" name="type">
+                <option value="line">Линейная</option>
+                <option value="period">Периодическая</option>
+                <option value="exponential">Экспоненциальная</option>
+            </select>
+            <button type="button" class="type-icon size" onclick="myFunction()"></button>
+            </div>
+            <h3>Тип создания</h3>
+            <form action="#" method="POST">
+                <input type="text" id="creation" creation="creation" required>
         </form>
       </main>
+        <div class="agree">
+        <input type="checkbox" id="agree" name="agree" required>
+        <label for="agree">Состояние зависимости</label>
+      </div>
     </div>
   </body>
 </html>
