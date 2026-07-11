@@ -13,6 +13,7 @@
         </div>
       </div>
       <main>
+        <article class="top">
         <h1>Название</h1>
           <form action="#" method="POST">
             <input type="text" id="name" name="name" required placeholder="Норма.АВТ.Потери технологические">
@@ -23,16 +24,36 @@
                 <option value="period">Периодическая</option>
                 <option value="exponential">Экспоненциальная</option>
             </select>
-            <button type="button" class="type-icon size" onclick="myFunction()"></button>
+            <button type="button" class="type-icon size"></button>
             </div>
             <h3>Тип создания</h3>
             <form action="#" method="POST">
                 <input type="text" id="creation" creation="creation" required>
         </form>
-      </main>
-        <div class="agree">
+        </article>
+        <article class="checkbox">
+          <div class="agree">
         <input type="checkbox" id="agree" name="agree" required>
         <label for="agree">Состояние зависимости</label>
+          </article>
+          <article class="center">
+            <h4>Измерено</h4>
+            <form action="#" method="POST">
+                <input type="text" id="measured" creation="measured" required>
+            </form>
+            <h5>Согласовано</h5>
+            <form action="#" method="POST">
+                <input type="text" id="agreed" creation="agreed" required>
+            </form>
+            <h6>Для пересчета графа</h6>
+            <form action="#" method="POST">
+                <input type="text" id="recalculation" creation="recalculation" required placeholder="1234,000" >
+            </form>
+          </article>
+          <article class="grid">
+            
+          </article>
+      </main>
       </div>
     </div>
   </body>
