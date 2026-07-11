@@ -8,6 +8,7 @@ body {
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
 }
+
 .form {
   display: flex;
   flex-direction: column;
@@ -20,6 +21,7 @@ body {
   position: relative;
   justify-content: space-between;
 }
+
 .header {
   display: flex;
   box-sizing: border-box;
@@ -28,6 +30,7 @@ body {
   font-size: 8px;
   width: 100%;
 }
+
 .header h1 {
   margin: 0;
 }
@@ -42,9 +45,11 @@ body {
   width: 12px;
   height: 12px;
 }
+
 .header-icon-1 {
   background-image: url("img/8020186.png");
 }
+
 .header-icon-2 {
   background-image: url(img/xx2.png);
 }
@@ -54,10 +59,19 @@ main {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  height: 100%;
 }
-main h1,
+
+.top {
+  padding-top: 15px;
+}
+
+.top h1,
 h2,
-h3 {
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   padding: 15px 0px 5px 0px;
   font-size: 12px;
@@ -65,7 +79,7 @@ h3 {
   color: #7b7d7e;
 }
 
-main input {
+.top input {
   margin: 0;
   width: 100%;
   border: 0;
@@ -76,7 +90,7 @@ main input {
   font-weight: 300;
 }
 
-main select {
+.top select {
   margin: 0;
   width: 100%;
   border: 0;
@@ -91,7 +105,7 @@ main select {
   background-size: cover;
   background-image: url(img/png-transparent-computer-icons-cut-copy-and-paste-copy-the-floor-miscellaneous-angle-rectangle.png);
 }
- 
+
 .select-row {
   display: flex;
   box-sizing: border-box;
@@ -116,4 +130,19 @@ button {
 
 input {
   margin: 0;
+}
+
+.center form {
+  margin: 0;
+}
+
+.center input {
+  margin: 0;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #000000;
+  color: #8b8b8c;
+  font-size: 13px;
+  font-weight: 300;
+  padding: 0px;
 }
