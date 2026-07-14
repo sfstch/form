@@ -35,20 +35,23 @@ body {
 .header-icons {
   display: flex;
   gap: 15px;
+  width: fit-content;
 }
 
-.icons-size {
+.fa-solid .fa-expand {
   background-size: contain;
   width: 12px;
   height: 12px;
+  background-size: cover;
+  background-image: url(<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free v7.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2020 Fonticons, Inc.--><path d="M32 32C14.3 32 0 46.3 0 64l0 96c0 17.7 14.3 32 32 32s32-14.3 32-32l0-64 64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 32zM64 352c0-17.7-14.3-32-32-32S0 334.3 0 352l0 96c0 17.7 14.3 32 32 32l96 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0 0-64zM320 32c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0 0 64c0 17.7 14.3 32 32 32s32-14.3 32-32l0-96c0-17.7-14.3-32-32-32l-96 0zM448 352c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 64-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c17.7 0 32-14.3 32-32l0-96z"/></svg>);
 }
 
-.header-icon-1 {
-  background-image: url("img/8020186.png");
-}
-
-.header-icon-2 {
-  background-image: url(img/xx2.png);
+.fa-solid .fa-xmark {
+  background-size: contain;
+  width: 12px;
+  height: 12px;
+  background-size: cover;
+  background-image: url(<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free v7.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2020 Fonticons, Inc.--><path d="M55.1 73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L147.2 256 9.9 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192.5 301.3 329.9 438.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.8 256 375.1 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192.5 210.7 55.1 73.4z"/></svg>);
 }
 
 h2 {
@@ -82,11 +85,11 @@ h2 {
   font-weight: 300;
 }
 
-.button-icons-size {
+ .fa-regular .fa-copy {
   background-size: contain;
   width: 12px;
   height: 12px;
-  background-size: cover;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2020 Fonticons, Inc.--><path d="M480 400L288 400C279.2 400 272 392.8 272 384L272 128C272 119.2 279.2 112 288 112L421.5 112C425.7 112 429.8 113.7 432.8 116.7L491.3 175.2C494.3 178.2 496 182.3 496 186.5L496 384C496 392.8 488.8 400 480 400zM288 448L480 448C515.3 448 544 419.3 544 384L544 186.5C544 169.5 537.3 153.2 525.3 141.2L466.7 82.7C454.7 70.7 438.5 64 421.5 64L288 64C252.7 64 224 92.7 224 128L224 384C224 419.3 252.7 448 288 448zM160 192C124.7 192 96 220.7 96 256L96 512C96 547.3 124.7 576 160 576L352 576C387.3 576 416 547.3 416 512L416 496L368 496L368 512C368 520.8 360.8 528 352 528L160 528C151.2 528 144 520.8 144 512L144 256C144 247.2 151.2 240 160 240L176 240L176 192L160 192z"/></svg>
+  background-size: cover;
   background-image: url(img/png-transparent-computer-icons-cut-copy-and-paste-copy-the-floor-miscellaneous-angle-rectangle.png);
 }
 
@@ -130,20 +133,28 @@ input {
 }
 
 table {
+  height: 200px;
   width: 100%;
- 
+  border-collapse: collapse;
+}
+
+caption {
+  text-align: left;
+  font-size: 14px;
 }
 
 thead tr {
   align-items: start;
 }
-th, td {
+
+th, td, tr {
   border: solid 1px #cecfd0;
   font-size: 11px;
-  min-height: 22px;
+  line-height: 22px;
   padding: 5px 3px;
-  border-collapse: collapse;
+  text-align: start;
   align-content: start;
+  line-height: 30px;
 }
 
 input[type="checkbox"] {
