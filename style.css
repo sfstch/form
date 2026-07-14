@@ -9,7 +9,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.form {
+.container {
   display: flex;
   flex-direction: column;
   box-shadow: 0 0 15px #474747;
@@ -27,12 +27,9 @@ body {
   box-sizing: border-box;
   align-items: center;
   justify-content: space-between;
-  font-size: 8px;
+  font-size: 9px;
   width: 100%;
-}
-
-.header h1 {
-  margin: 0;
+  padding: 0 0 15px 0;
 }
 
 .header-icons {
@@ -40,7 +37,7 @@ body {
   gap: 15px;
 }
 
-.size {
+.icons-size {
   background-size: contain;
   width: 12px;
   height: 12px;
@@ -54,24 +51,7 @@ body {
   background-image: url(img/xx2.png);
 }
 
-main {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  height: 100%;
-}
-
-.top {
-  padding-top: 15px;
-}
-
-.top h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h2 {
   margin: 0;
   padding: 15px 0px 5px 0px;
   font-size: 12px;
@@ -79,7 +59,19 @@ h6 {
   color: #7b7d7e;
 }
 
-.top input {
+.top-form-group input {
+  margin: 0;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #cecfd0;
+  background-color: #f1f1f1;
+  color: #8b8b8c;
+  font-size: 13px;
+  font-weight: 300;
+  outline: none;
+}
+
+.top-form-group select {
   margin: 0;
   width: 100%;
   border: 0;
@@ -90,28 +82,17 @@ h6 {
   font-weight: 300;
 }
 
-.top select {
-  margin: 0;
-  width: 100%;
-  border: 0;
-  border-bottom: 1px solid #cecfd0;
-  background-color: #f1f1f1;
-  color: #8b8b8c;
-  font-size: 13px;
-  font-weight: 300;
-}
-
-.type-icon {
-  background-size: cover;
+.button-icons-size {
+  background-size: contain;
+  width: 12px;
+  height: 12px;
+  background-size: cover;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2020 Fonticons, Inc.--><path d="M480 400L288 400C279.2 400 272 392.8 272 384L272 128C272 119.2 279.2 112 288 112L421.5 112C425.7 112 429.8 113.7 432.8 116.7L491.3 175.2C494.3 178.2 496 182.3 496 186.5L496 384C496 392.8 488.8 400 480 400zM288 448L480 448C515.3 448 544 419.3 544 384L544 186.5C544 169.5 537.3 153.2 525.3 141.2L466.7 82.7C454.7 70.7 438.5 64 421.5 64L288 64C252.7 64 224 92.7 224 128L224 384C224 419.3 252.7 448 288 448zM160 192C124.7 192 96 220.7 96 256L96 512C96 547.3 124.7 576 160 576L352 576C387.3 576 416 547.3 416 512L416 496L368 496L368 512C368 520.8 360.8 528 352 528L160 528C151.2 528 144 520.8 144 512L144 256C144 247.2 151.2 240 160 240L176 240L176 192L160 192z"/></svg>
   background-image: url(img/png-transparent-computer-icons-cut-copy-and-paste-copy-the-floor-miscellaneous-angle-rectangle.png);
 }
 
-.select-row {
+.form-group-dependency-type {
   display: flex;
-  box-sizing: border-box;
-  gap: 10px;
-  width: 100%;
-  align-items: center;
+  gap: 15px;
 }
 
 button {
@@ -120,23 +101,16 @@ button {
   border: none;
 }
 
-.agree {
-  padding: 15px 0 0 0;
-  height: 100%;
-  font-size: 13px;
-  font-weight: 500;
-  align-items: center;
-}
-
 input {
   margin: 0;
+  outline: none;
 }
 
-.center form {
+.bottom-form-group form {
   margin: 0;
 }
 
-.center input {
+.bottom-form-group input {
   margin: 0;
   width: 100%;
   border: 0;
@@ -146,62 +120,36 @@ input {
   font-weight: 300;
   padding: 0px;
 }
-section {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 15px;
-}
 
 .grid {
+  padding: 15px 0 0 0;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  box-sizing: border-box;
-  align-items: baseline;
   gap: 15px;
   height: 100%;
-}
-
-.grid1,
-.grid2 {
-  box-sizing: border-box;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr 1fr 1fr 6fr;
 }
 
-p {
-  margin: 0;
-  font-size: 12px;
-  padding: 15 0 0 0;
-
+table {
+  width: 100%;
+ 
 }
 
-.item-header, .item-h1, .item-body {
-  box-sizing: border-box;
+thead tr {
+  align-items: start;
+}
+th, td {
   border: solid 1px #cecfd0;
   font-size: 11px;
   min-height: 22px;
   padding: 5px 3px;
+  border-collapse: collapse;
+  align-content: start;
 }
 
-.item-header {
-font-weight: bold;
+input[type="checkbox"] {
+  width: fit-content;
 }
 
-.item-header, .item-h1 {
-  background-color: #f1f1f1;
-}
-
-.item-body {
+label {
   font-size: 12px;
-}
-
-.item-footer {
-  grid-column: 1/4;
-  border: solid 1px #cecfd0;
-  font-size: 11px;
 }

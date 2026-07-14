@@ -1,86 +1,112 @@
 <!DOCTYPE <html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF8">
     <link rel="stylesheet" href="style.css" />
+    <title>Редактирование зависимости</title>
   </head>
   <body>
-    <div class="form">
+    <div class="container">
       <div class="header">
         <h1>Редактирование зависимости</h1>
         <div class="header-icons">
-          <div class="header-icon-1 size"></div>
-          <div class="header-icon-2 size"></div>
+          <div class="header-icon-1 icons-size"></div>
+          <div class="header-icon-2 icons-size"></div>
         </div>
       </div>
-      <main>
-        <article class="top">
-        <h1>Название</h1>
+        <section class="top-form-group">
+         <h2>Название</h2>
           <form action="#" method="POST">
-            <input type="text" id="name" name="name" required placeholder="Норма.АВТ.Потери технологические">
+            <input type="text" placeholder="Норма.АВТ.Потери технологические" disabled="true">
             <h2>Тип зависимости</h2>
-            <div class="select-row">
+            <div class="form-group-dependency-type">
             <select id="type" name="type">
                 <option value="line">Линейная</option>
                 <option value="period">Периодическая</option>
                 <option value="exponential">Экспоненциальная</option>
             </select>
-            <button type="button" class="type-icon size"></button>
+            <button type="button" class="button-icons-size"></button>
             </div>
-            <h3>Тип создания</h3>
+             <h2>Тип создания</h2>
+              <form action="#" method="POST">
+                <input type="text">
+             </form>
+             <section class="checkbox">
+                <input type="checkbox"/>
+                <label>Состояние зависимости</label>
+             </section>
+        </section>
+          <section class="bottom-form-group">
+            <h2>Измерено</h2>
             <form action="#" method="POST">
-                <input type="text" id="creation" creation="creation" required>
-        </form>
-        </article>
-        <article class="checkbox">
-          <div class="agree">
-        <input type="checkbox" id="agree" name="agree" required>
-        <label for="agree">Состояние зависимости</label>
-          </article>
-          <article class="center">
-            <h4>Измерено</h4>
-            <form action="#" method="POST">
-                <input type="text" id="measured" creation="measured" required>
+                <input type="text" >
             </form>
-            <h5>Согласовано</h5>
+            <h2>Согласовано</h2>
             <form action="#" method="POST">
-                <input type="text" id="agreed" creation="agreed" required>
+                <input type="text" >
             </form>
-            <h6>Для пересчета графа</h6>
+            <h2>Для пересчета графа</h2>
             <form action="#" method="POST">
-                <input type="text" id="recalculation" creation="recalculation" required placeholder="1234,000" >
+                <input type="text" placeholder="1234,000" >
             </form>
-          </article>
-            <section>
-             <p>Объекты левой части</p>
-             <p>Объекты правой части</p>
-            </section>
-          <article class="grid">
-            <div class="grid1">
-                <div class="item-header">Группа</div>
-                <div class="item-header">Объект</div>
-                <div class="item-header">Расположение</div>
-                <div class="item-h1"></div>
-                <div class="item-h1"></div>
-                <div class="item-h1"></div>
-                <div class="item-body">Измерение</div>
-                <div class="item-body">АВТ.Потери технологические</div>
-                <div class="item-body">Числитель</div>
-                <div class="item-footer"></div>
-            </div>
-            <div class="grid2">
-                <div class="item-header">Группа</div>
-                <div class="item-header">Объект</div>
-                <div class="item-header">Расположение</div>              
-                <div class="item-h1"></div>
-                <div class="item-h1"></div>
-                <div class="item-h1"></div>
-                <div class="item-body">Вход в Узел/Установку</div>
-                <div class="item-body">АВТ(7)</div>
-                <div class="item-body">Числитель</div>
-                <div class="item-footer"></div>
-            </div>
-          </article>
-      </main>
+          </section>
+          <section class="grid">
+               <table>
+                 <caption>  Объекты левой части
+                 </caption>
+                    <thead>
+                     <tr>
+                       <th scope="col">Группа</th>
+                       <th scope="col">Объект</th>
+                       <th scope="col">Расположение</th>
+                     </tr>
+                   </thead> 
+                   <tbody>
+                      <tr>
+                       <th scope="row"></th>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                         <td scope="row">Измерение</td>
+                         <td>АВТ.Потери технологические</td>
+                         <td>Числитель</td>
+                      </tr>
+                   <tfoot>
+                      <tr>
+                        <td scope="row" colspan="3"></td>
+                      </tr>
+                  </tfoot>
+               </table>
+              <table>
+                 <caption>  Объекты правой части
+                 </caption>
+                    <thead>
+                     <tr>
+                       <th scope="col">Группа</th>
+                       <th scope="col">Объект</th>
+                       <th scope="col">Расположение</th>
+                     </tr>
+                   </thead> 
+                   <tbody>
+                      <tr>
+                       <th scope="row"></th>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                         <td scope="row">Вход в Узел\Установку</td>
+                         <td>АВТ(7)</td>
+                         <td>Числитель</td>
+                      </tr>
+                   <tfoot>
+                      <tr>
+                        <td scope="row" colspan="3"></td>
+                      </tr>
+                  </tfoot>
+               </table>
+          </section>
+        </div>
       </div>
     </div>
   </body>
