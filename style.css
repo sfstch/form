@@ -152,14 +152,31 @@ section.buttons-bottom button {
   display: flex;
   flex-direction: column;
   position: absolute;
+  inset: 0;
 }
 
 .increase-buttons button {
   background-color: #ffffff;
   max-height: fit-content;
+  max-width: fit-content;
 }
 
 button.top {
-  display: flex;
-  justify-content: flex-end;
+  position: absolute;
+  right: 2px;
+  rotate: 90deg;
+  top: 390px;
+}
+
+button.center {
+  position: absolute;
+  right: 600px;
+  bottom: 2px;
+}
+
+button.bottom {
+  position: absolute;
+  right: 2px;
+  bottom: 6px;
+  rotate: 135deg;
 }
