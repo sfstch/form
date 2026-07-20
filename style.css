@@ -19,6 +19,7 @@ body {
   height: 780px;
   padding: 30px 25px;
   position: relative;
+  z-index: 1;
 }
 
 .header {
@@ -153,6 +154,7 @@ section.buttons-bottom button {
   flex-direction: column;
   position: absolute;
   inset: 0;
+  z-index: -1;
 }
 
 .increase-buttons button {
