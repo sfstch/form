@@ -1,49 +1,62 @@
 <!DOCTYPE <html>
 <html lang="en">
-<head>
-  <meta charset="UTF8">
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://kit.fontawesome.com/5bfe23d569.js" crossorigin="anonymous"></script>
-  <title>Редактирование зависимости</title>
-</head>
-<body>
-  <div class="container">
-    <div class="header">
-      <h1>Редактирование зависимости</h1>
-      <div class="header-icons">
-        <button><i class="fa-solid fa-expand icons-size"></i></button>
-        <button><i class="fa-solid fa-xmark icons-size"></i></button>
+  <head>
+    <meta charset="UTF8" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/5bfe23d569.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Редактирование зависимости</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="increase-buttons">
+        <button class="top"><i class="fa-solid fa-equals"></i></button>
+        <button class="center"><i class="fa-solid fa-equals"></i></button>
+        <button class="bottom"><i class="fa-solid fa-equals"></i></button>
       </div>
-    </div>
-    <section class="top-form-group">
-      <h2>Название</h2>
-      <form action="#" method="POST">
-        <input type="text" placeholder="Норма.АВТ.Потери технологические" disabled="true">
-        <h2>Тип зависимости</h2>
-        <div class="form-group-dependency-type">
-          <select id="type" name="type">
-            <option value="line">Линейная</option>
-            <option value="period">Периодическая</option>
-            <option value="exponential">Экспоненциальная</option>
-          </select>
-          <button><i class="fa-regular fa-copy"></i></button>
+      <div class="header">
+        <h1>Редактирование зависимости</h1>
+        <div class="header-icons">
+          <button><i class="fa-solid fa-expand icons-size"></i></button>
+          <button><i class="fa-solid fa-xmark icons-size"></i></button>
         </div>
-        <h2>Тип создания</h2>
-          <input type="text">
+      </div>
+      <section class="top-form-group">
+        <h2>Название</h2>
+        <form action="#" method="POST">
+          <input
+            type="text"
+            placeholder="Норма.АВТ.Потери технологические"
+            disabled="true"
+          />
+          <h2>Тип зависимости</h2>
+          <div class="form-group-dependency-type">
+            <select id="type" name="type">
+              <option value="line">Линейная</option>
+              <option value="period">Периодическая</option>
+              <option value="exponential">Экспоненциальная</option>
+            </select>
+            <button><i class="fa-regular fa-copy"></i></button>
+          </div>
+          <h2>Тип создания</h2>
+          <input type="text" />
         </form>
-        <section class="checkbox">
+        <div class="checkbox">
           <input type="checkbox" />
           <label>Состояние зависимости</label>
-        </section>
+        </div>
         <h2>Измерено</h2>
-        <input type="text">
+        <input type="text" />
         <h2>Согласовано</h2>
-        <input type="text">
+        <input type="text" />
         <h2>Для пересчета графа</h2>
-        <input type="text" placeholder="1234,000">
-        <section class="grid">
+        <input type="text" placeholder="1234,000" />
+        <div class="grid">
           <table>
-            <caption> Объекты левой части
+            <caption>
+              Объекты левой части
             </caption>
             <thead>
               <tr>
@@ -63,6 +76,7 @@
                 <td>АВТ.Потери технологические</td>
                 <td>Числитель</td>
               </tr>
+            </tbody>
             <tfoot>
               <tr>
                 <td scope="row" colspan="3"></td>
@@ -70,7 +84,8 @@
             </tfoot>
           </table>
           <table>
-            <caption> Объекты правой части
+            <caption>
+              Объекты правой части
             </caption>
             <thead>
               <tr>
@@ -90,17 +105,19 @@
                 <td>АВТ(7)</td>
                 <td>Числитель</td>
               </tr>
+            </tbody>
             <tfoot>
               <tr>
                 <td scope="row" colspan="3"></td>
               </tr>
             </tfoot>
           </table>
-        </section>
-    </section>
-        <section class="buttons-bottom">
-          <button><i class="fa-solid fa-arrow-rotate-left"></i>Отменить</button>
-          <button><i class="fa-regular fa-floppy-disk"></i>Сохранить</button>
-  </div>
- </body>
+        </div>
+      </section>
+      <section class="buttons-bottom">
+        <button><i class="fa-solid fa-arrow-rotate-left"></i>Отменить</button>
+        <button><i class="fa-regular fa-floppy-disk"></i>Сохранить</button>
+      </section>
+    </div>
+  </body>
 </html>
