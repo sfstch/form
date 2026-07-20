@@ -73,10 +73,20 @@ h2 {
   gap: 15px;
 }
 
+.header-icons button {
+  display: block;
+  padding: 0;
+  border: none;
+  background-color: #ffffff;
+}
+
 button {
   display: block;
   padding: 0;
   border: none;
+  height: 25px;
+  width: 25px;
+  background-color: #cecfd0;
 }
 
 input {
@@ -126,8 +136,30 @@ label {
   font-size: 12px;
 }
 
-section .buttons-bottom {
-display: flex;
-flex-direction: row;
-justify-content: space-between;
+.buttons-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+section.buttons-bottom button {
+  background-color: #474747;
+  width: 90px;
+  height: 25px;
+  color: #ffffff;
+}
+
+.increase-buttons {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+}
+
+.increase-buttons button {
+  background-color: #ffffff;
+  max-height: fit-content;
+}
+
+button.top {
+  display: flex;
+  justify-content: flex-end;
 }
