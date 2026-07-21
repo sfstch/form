@@ -1,5 +1,5 @@
 <!DOCTYPE <html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF8" />
     <link rel="stylesheet" href="style.css" />
@@ -12,9 +12,15 @@
   <body>
     <div class="container">
       <div class="increase-buttons">
-        <button class="top"><i class="fa-solid fa-equals"></i></button>
-        <button class="center"><i class="fa-solid fa-equals"></i></button>
-        <button class="bottom"><i class="fa-solid fa-equals"></i></button>
+        <button class="equal-left-center">
+          <i class="fa-solid fa-equals"></i>
+        </button>
+        <button class="equal-bottom-center">
+          <i class="fa-solid fa-equals"></i>
+        </button>
+        <button class="equal-bottom-left">
+          <i class="fa-solid fa-equals"></i>
+        </button>
       </div>
       <div class="header">
         <h1>Редактирование зависимости</h1>
@@ -23,26 +29,24 @@
           <button><i class="fa-solid fa-xmark icons-size"></i></button>
         </div>
       </div>
-      <section class="top-form-group">
+      <section class="form-group">
         <h2>Название</h2>
-        <form action="#" method="POST">
-          <input
-            type="text"
-            placeholder="Норма.АВТ.Потери технологические"
-            disabled="true"
-          />
-          <h2>Тип зависимости</h2>
-          <div class="form-group-dependency-type">
-            <select id="type" name="type">
-              <option value="line">Линейная</option>
-              <option value="period">Периодическая</option>
-              <option value="exponential">Экспоненциальная</option>
-            </select>
-            <button><i class="fa-regular fa-copy"></i></button>
-          </div>
-          <h2>Тип создания</h2>
-          <input type="text" />
-        </form>
+        <input
+          type="text"
+          value="Норма.АВТ.Потери технологические"
+          disabled="disabled"
+        />
+        <h2>Тип зависимости</h2>
+        <div class="form-group-dependency-type">
+          <select id="type" name="type" disabled="disabled">
+            <option value="line">Линейный</option>
+            <option value="period">Периодический</option>
+            <option value="exponential">Экспоненциальный</option>
+          </select>
+          <button><i class="fa-regular fa-copy"></i></button>
+        </div>
+        <h2>Тип создания</h2>
+        <input type="text" value="Импортированная" disabled="disabled" />
         <div class="checkbox">
           <input type="checkbox" />
           <label>Состояние зависимости</label>
@@ -52,7 +56,7 @@
         <h2>Согласовано</h2>
         <input type="text" />
         <h2>Для пересчета графа</h2>
-        <input type="text" placeholder="1234,000" />
+        <input type="text" value="1234,000" />
         <div class="grid">
           <table>
             <caption>
@@ -67,7 +71,7 @@
             </thead>
             <tbody>
               <tr>
-                <th scope="row"></th>
+                <td scope="row"></td>
                 <td></td>
                 <td></td>
               </tr>
@@ -96,7 +100,7 @@
             </thead>
             <tbody>
               <tr>
-                <th scope="row"></th>
+                <td scope="row"></td>
                 <td></td>
                 <td></td>
               </tr>
