@@ -19,7 +19,8 @@ body {
   height: 780px;
   padding: 30px 25px;
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  gap: 5px;
 }
 
 .header {
@@ -29,7 +30,6 @@ body {
   justify-content: space-between;
   font-size: 9px;
   width: 100%;
-  padding: 0 0 15px 0;
 }
 
 .header-icons {
@@ -46,10 +46,9 @@ h2 {
   color: #7b7d7e;
 }
 
-.top-form-group input {
-  margin: 0;
+.form-group input:disabled {
   width: 100%;
-  border: 0;
+  border: none;
   border-bottom: 1px solid #cecfd0;
   background-color: #f1f1f1;
   color: #8b8b8c;
@@ -58,10 +57,18 @@ h2 {
   outline: none;
 }
 
-.top-form-group select {
-  margin: 0;
+.form-group input {
   width: 100%;
-  border: 0;
+  border: none;
+  border-bottom: 1px solid #474747;
+  font-size: 13px;
+  font-weight: 300;
+  outline: none;
+}
+
+.form-group select {
+  width: 100%;
+  border: none;
   border-bottom: 1px solid #cecfd0;
   background-color: #f1f1f1;
   color: #8b8b8c;
@@ -72,6 +79,7 @@ h2 {
 .form-group-dependency-type {
   display: flex;
   gap: 15px;
+  color: #8b8b8c;
 }
 
 .header-icons button {
@@ -122,7 +130,6 @@ td,
 tr {
   border: solid 1px #cecfd0;
   font-size: 11px;
-  line-height: 22px;
   padding: 5px 3px;
   text-align: start;
   align-content: start;
@@ -130,7 +137,11 @@ tr {
 }
 
 input[type="checkbox"] {
-  width: fit-content;
+  width: auto;
+}
+
+.checkbox {
+  padding: 15 0 0 0;
 }
 
 label {
@@ -144,15 +155,17 @@ label {
 }
 section.buttons-bottom button {
   background-color: #474747;
-  width: 90px;
-  height: 25px;
+  width: fit-content;
+  padding: 5px;
   color: #ffffff;
+  border-radius: 3px;
+  display: flex;
+  gap: 5px;
 }
 
 .increase-buttons {
   display: flex;
   flex-direction: column;
-  position: absolute;
   inset: 0;
   z-index: -1;
 }
@@ -163,22 +176,25 @@ section.buttons-bottom button {
   max-width: fit-content;
 }
 
-button.top {
+button.equal-left-center {
   position: absolute;
   right: 2px;
   rotate: 90deg;
   top: 390px;
+  cursor: e-resize;
 }
 
-button.center {
+button.equal-bottom-center {
   position: absolute;
   right: 600px;
   bottom: 2px;
+  cursor: s-resize;
 }
 
-button.bottom {
+button.equal-bottom-left {
   position: absolute;
   right: 2px;
   bottom: 6px;
   rotate: 135deg;
+  cursor: se-resize;
 }
