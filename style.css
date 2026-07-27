@@ -200,7 +200,8 @@ button.equal-bottom-left {
   cursor: se-resize;
 }
 
-.form-message {
+.message {
+
   color: #7b7d7e;
   font-size: 25px;
   text-align:center;
