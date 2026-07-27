@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log(" cancelBtn:", cancelBtn);
 
   allInputs.forEach(function (field) {
-    if (field.type === "checkbox" || field.type === "radio") {
+    if (field.type === "checkbox") {
       field.addEventListener(
         "change",
         checkInputs(allInputs, saveBtn, cancelBtn),
@@ -39,10 +39,25 @@ function checkInputs(inputs, saveBtn, cancelBtn) {
   });
   saveBtn.disabled = !isFilled;
   cancelBtn.disabled = !isFilled;
-  document.querySelector(".form-message");
-  const form = document.querySelector(".form-message");
-  saveBtn.addEventListener("click", function () {
-    form.innerHTML = "заявка отправлена";
+
+  document.querySelector(".container");
+  const form = document.querySelector(".container");
+  const controls = document.querySelector(".header-icons");
+  saveBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    let allFilled = true;
+    inputs.forEach((input) => {
+      if (input.value.trim() === "") {
+        allFilled = false;
+      }
+    });
+    if (allFilled) {
+      form.innerHTML = "";
+      form.appendChild(controls);
+      const message = document.createElement("div");
+      message.textContent = "заявка отправлена ✔";
+      message.classList.add("message");
+      form.appendChild(message);
+    }
   });
-  form.classList.add("message");
 }
