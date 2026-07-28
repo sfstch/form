@@ -43,6 +43,9 @@ function checkInputs(inputs, saveBtn, cancelBtn) {
   document.querySelector(".container");
   const form = document.querySelector(".container");
   const controls = document.querySelector(".header-icons");
+  const xmarkBtn = document.getElementById("xmarkBtn");
+  const expandBtn = document.getElementById("expandBtn");
+  const originalHTML = form.innerHTML;
   saveBtn.addEventListener("click", function (e) {
     e.preventDefault();
     let allFilled = true;
@@ -58,6 +61,33 @@ function checkInputs(inputs, saveBtn, cancelBtn) {
       message.textContent = "заявка отправлена ✔";
       message.classList.add("message");
       form.appendChild(message);
+      xmarkBtn.addEventListener("click", function () {
+        form.innerHTML = originalHTML;
+      });
+    }
+    const saveBtn = form.querySelector(".saveBtn");
+    const xmarkBtnNew = form.querySelector(".xmarkBtn");
+    const container = document.querySelector(".container");
+    if (saveBtn) {
+      saveBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+      });
+    }
+    if (xmarkBtnNew) {
+      xmarkBtnNew.addEventListener("click", function () {
+        form.innerHTML = originalHTML;
+      });
+    }
+    if (expandBtn) {
+      expandBtn.addEventListener("click", function () {
+        if (!document.fullscreenElement) {
+          container.requestFullscreen();
+        } else {
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          }
+        }
+      });
     }
   });
 }
