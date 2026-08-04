@@ -31,14 +31,17 @@ document.addEventListener("DOMContentLoaded", function () {
     cancelBtn.disabled = !isFilled;
   }
 
+  const data = [];
   saveBtn.addEventListener("click", function () {
-    form.submit();
-    const data = [];
     inputs.forEach((input) => {
       data.push(input.value);
     });
-    console.log(data);
   });
+
+  function dataElementsLog(inputs) {
+    console.log(data[0], data[1], data[2]);
+  }
+  dataElementsLog();
 
   /*if (allFilled) {
     form.innerHTML = "";
