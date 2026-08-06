@@ -4,17 +4,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const saveBtn = document.getElementById("saveBtn");
   const cancelBtn = document.getElementById("cancelBtn");
   const form = document.getElementById("container");
-  const inputs = document.querySelectorAll("input");
+  const inputs = document.querySelectorAll("input,select");
 
   allInputs.forEach(function (field) {
     if (field.type === "checkbox") {
-      field.addEventListener(
-        "change",
+      field.addEventListener("change", () =>
         checkInputs(allInputs, saveBtn, cancelBtn),
       );
     } else {
-      field.addEventListener(
-        "input",
+      field.addEventListener("input", () =>
         checkInputs(allInputs, saveBtn, cancelBtn),
       );
     }
@@ -30,20 +28,37 @@ document.addEventListener("DOMContentLoaded", function () {
     saveBtn.disabled = !isFilled;
     cancelBtn.disabled = !isFilled;
   }
+  /* function collectData() {
+    const key =  document.getElementById("title").value;
+    const value = document.getElementById("title").value;
+    collectData(keys, values);
+  }*/
 
   const data = [];
   saveBtn.addEventListener("click", function () {
     inputs.forEach((input) => {
+      const key = input.name;
+      const value = input.value.trim();
+      if (key) {
+        data[key] = value;
+      }
       data.push(input.value);
     });
+    dataElementsLog(data);
   });
 
-  function dataElementsLog(inputs) {
-    console.log(data[0], data[1], data[2]);
+  function dataElementsLog(data) {
+    console.log("Данные пользователя", data);
+    console.log("Название:", data[0]);
+    console.log("Тип зависимости:", data[1]);
+    console.log("Тип создания:", data[2]);
+    console.log("Чекбокс:", data[3]);
+    console.log("Измерено:", data[4]);
+    console.log("Согласовано:", data[5]);
+    console.log("Для пересчета графа:", data[6]);
   }
-  dataElementsLog();
 
-  /*if (allFilled) {
+  /* if (allFilled) {
     form.innerHTML = "";
     form.appendChild(controls);
     const message = document.createElement("div");
@@ -54,11 +69,11 @@ document.addEventListener("DOMContentLoaded", function () {
       form.innerHTML = originalHTML;
     });
   }*/
-  const xmarkBtnNew = form.querySelector(".xmarkBtn");
+  const xmarkBtn = form.querySelector(".xmarkBtn");
   const container = document.querySelector(".container");
 
-  if (xmarkBtnNew) {
-    xmarkBtnNew.addEventListener("click", function () {
+  if (xmarkBtn) {
+    xmarkBtn.addEventListener("click", function () {
       form.innerHTML = originalHTML;
     });
   }
