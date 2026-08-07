@@ -47,11 +47,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //console.log(data);
 
-  saveBtn.addEventListener("click", function () {
+  saveBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    let allFilled = true;
     inputs.forEach((input) => {
       const value = input.value.trim();
       const key = input.name;
       data[key] = value;
+      if (input.value.trim() === "") {
+        allFilled = false;
+      }
       // data.push(input.value);
     });
     console.log(data);
@@ -68,35 +73,58 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Согласовано:", data[5]);
     console.log("Для пересчета графа:", data[6]);
   }*/
-
-  /* if (allFilled) {
-    form.innerHTML = "";
-    form.appendChild(controls);
-    const message = document.createElement("div");
-    message.textContent = "заявка отправлена ✔";
-    message.classList.add("message");
-    form.appendChild(message);
-    xmarkBtn.addEventListener("click", function () {
-      form.innerHTML = originalHTML;
-    });
-  }*/
-  const xmarkBtn = form.querySelector(".xmarkBtn");
-  const container = document.querySelector(".container");
-
-  if (xmarkBtn) {
-    xmarkBtn.addEventListener("click", function () {
-      form.innerHTML = originalHTML;
-    });
-  }
-  if (expandBtn) {
-    expandBtn.addEventListener("click", function () {
-      if (!document.fullscreenElement) {
-        container.requestFullscreen();
-      } else {
-        if (document.exitFullscreen) {
-          document.exitFullscreen();
-        }
+  saveBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    let allFilled = true;
+    inputs.forEach((input) => {
+      if (input.value.trim() === "") {
+        allFilled = false;
       }
     });
-  }
+
+    const controls = document.querySelector(".header-icons");
+    const expandBtn = form.querySelector(".expandBtn");
+    const container = document.querySelector(".container");
+    const originalHTML = form.innerHTML;
+
+    if (allFilled) {
+      form.innerHTML = "";
+      form.appendChild(controls);
+      const message = document.createElement("div");
+      message.textContent = "заявка отправлена ✔";
+      message.classList.add("message");
+      form.appendChild(message);
+    }
+
+    const xmarkBtn = form.querySelector(".xmarkBtn");
+    /* console.log(xmarkBtn);
+    xmarkBtn.addEventListener("click", function () {
+      form.innerHTML = originalHTML;
+    });
+    if (saveBtn) {
+      saveBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+      });
+    }*/
+    console.log(expandBtn, xmarkBtn);
+    if (!xmarkBtn) {
+      console.warn("кнопка не найдена");
+    }
+    if (xmarkBtn) {
+      xmarkBtn.addEventListener("click", function () {
+        form.innerHTML = originalHTML;
+      });
+    }
+    if (expandBtn) {
+      expandBtn.addEventListener("click", function () {
+        if (!document.fullscreenElement) {
+          container.requestFullscreen();
+        } else {
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          }
+        }
+      });
+    }
+  });
 });
