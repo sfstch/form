@@ -4,7 +4,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const saveBtn = document.getElementById("saveBtn");
   const cancelBtn = document.getElementById("cancelBtn");
   const form = document.getElementById("container");
-  const inputs = document.querySelectorAll("input,select");
+  const xmarkBtn = form.querySelector(".btn-xmark");
+  const expandBtn = form.querySelector(".btn-expand");
+  const controls = document.querySelector(".header-icons");
+  const formBlock = document.querySelector(".form-block");
+  const finishedHidden = document.querySelector(".finished-hidden");
 
   allInputs.forEach(function (field) {
     if (field.type === "checkbox") {
@@ -28,103 +32,54 @@ document.addEventListener("DOMContentLoaded", function () {
     saveBtn.disabled = !isFilled;
     cancelBtn.disabled = !isFilled;
   }
-  /* function collectData() {
-    const key =  document.getElementById("title").value;
-    const value = document.getElementById("title").value;
-    collectData(keys, values);
-  }*/
 
-  let data = {};
-  /*keys: {
-      title: document.querySelector("title"),
-      typeOfDependency: document.getElementById("typeOfDependancy"),
-      typeOfCreation: document.getElementById("typeOfCreation"),
-      checkbox: document.getElementById("checkbox"),
-      measured: document.getElementById("measured"),
-      agreed: document.getElementById("agreed"),
-      recalculation: document.getElementById("recalculation"),
-    },*/
-
-  //console.log(data);
-
-  saveBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    let allFilled = true;
-    inputs.forEach((input) => {
-      const value = input.value.trim();
+  saveBtn.addEventListener("click", () => {
+    if (saveBtn.disabled) return;
+    const data = {};
+    allInputs.forEach((input) => {
       const key = input.name;
-      data[key] = value;
-      if (input.value.trim() === "") {
-        allFilled = false;
-      }
-      // data.push(input.value);
+      if (!key) return;
+      data[key] =
+        input.type === "checkbox" ? input.checked : input.value.trim();
     });
     console.log(data);
-    // dataElementsLog(data);
   });
 
-  /* function dataElementsLog(data) {
-    console.log("Данные пользователя", data);
-    console.log("Название:", data);
-    console.log("Тип зависимости:", data[1]);
-    console.log("Тип создания:", data[2]);
-    console.log("Чекбокс:", data[3]);
-    console.log("Измерено:", data[4]);
-    console.log("Согласовано:", data[5]);
-    console.log("Для пересчета графа:", data[6]);
-  }*/
-  saveBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    let allFilled = true;
-    inputs.forEach((input) => {
-      if (input.value.trim() === "") {
-        allFilled = false;
-      }
-    });
+  formBlock.classList.remove("active");
+  finishedHidden.classList.add("active");
 
-    const controls = document.querySelector(".header-icons");
-    const expandBtn = form.querySelector(".expandBtn");
-    const container = document.querySelector(".container");
-    const originalHTML = form.innerHTML;
-
-    if (allFilled) {
-      form.innerHTML = "";
-      form.appendChild(controls);
-      const message = document.createElement("div");
-      message.textContent = "заявка отправлена ✔";
-      message.classList.add("message");
-      form.appendChild(message);
-    }
-
-    const xmarkBtn = form.querySelector(".xmarkBtn");
-    /* console.log(xmarkBtn);
-    xmarkBtn.addEventListener("click", function () {
-      form.innerHTML = originalHTML;
-    });
-    if (saveBtn) {
-      saveBtn.addEventListener("click", function (e) {
-        e.preventDefault();
-      });
-    }*/
-    console.log(expandBtn, xmarkBtn);
-    if (!xmarkBtn) {
-      console.warn("кнопка не найдена");
-    }
-    if (xmarkBtn) {
-      xmarkBtn.addEventListener("click", function () {
-        form.innerHTML = originalHTML;
-      });
-    }
-    if (expandBtn) {
-      expandBtn.addEventListener("click", function () {
-        if (!document.fullscreenElement) {
-          container.requestFullscreen();
+  if (xmarkBtn) {
+    xmarkBtn.addEventListener("click", () => {
+      finishedHidden.classList.remove("active");
+      formBlock.classList.add("active");
+      allInputs.forEach((input) => {
+        if (input.type === "checkbox") {
+          input.checked = false;
         } else {
-          if (document.exitFullscreen) {
-            document.exitFullscreen();
-          }
+          input.value = "";
         }
       });
-    }
-  });
+      checkInputs();
+    });
+  }
+
+  if (xmarkBtn) {
+    xmarkBtn.addEventListener("click", () => {
+      console.log();
+    });
+  }
+
+  if (expandBtn) {
+    expandBtn.addEventListener("click", () => {
+      if (!document.fullscreenElement) {
+        container
+          .requestFullscreen()
+          .catch((err) =>
+            console.error(`Ошибка полноэкранного режима: ${err.message}`),
+          );
+      } else {
+        document.exitFullscreen();
+      }
+    });
+  }
 });
