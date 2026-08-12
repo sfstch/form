@@ -22,9 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     xmarkBtnOnChangedFormBlock(finishedHidden, formBlockSubmission, allInputs),
   );
 
-  expandBtn.addEventListener("click", () =>
-    expandBtnOnChangedFormBlock(expandBtn, form),
-  );
+  expandBtn.addEventListener("click", () => expandBtnOnChangedFormBlock(form));
 });
 
 //checkInputs(allInputs, saveBtn, cancelBtn, xmarkBtn);
