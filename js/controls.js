@@ -11,46 +11,29 @@ function onSaveBtnClick(saveBtn, allInputs, input) {
   console.log(data);
 }
 
-function formBlockPost(formBlock, finishedHidden, formBlockSubmission) {
-  formBlock.classList.remove("active");
+function formBlockPost(finishedHidden, formBlockSubmission) {
   formBlockSubmission.classList.add("active");
   finishedHidden.classList.add("active");
 }
 
-function xmarkBtnOnChangedFormBlock(formBlock, finishedHidden, xmarkBtn) {
-  if (xmarkBtn) {
-    xmarkBtn.addEventListener("click", () => {
-      finishedHidden.classList.remove("active");
-      formBlock.classList.add("active");
-      allInputs.forEach((input) => {
-        if (input.type === "checkbox") {
-          input.checked = false;
-        } else {
-          input.value = "";
-        }
-      });
-      checkInputs();
-    });
-  }
-
-  if (xmarkBtn) {
-    xmarkBtn.addEventListener("click", () => {
-      console.log();
-    });
-  }
+function xmarkBtnOnChangedFormBlock(
+  finishedHidden,
+  formBlockSubmission,
+  allInputs,
+) {
+  formBlockSubmission.classList.remove("active");
+  finishedHidden.classList.remove("active");
 }
-function expandBtnOnChangedFormBlock(formBlock, finishedHidden, expandBtn) {
-  if (expandBtn) {
-    expandBtn.addEventListener("click", () => {
-      if (!document.fullscreenElement) {
-        container
-          .requestFullscreen()
-          .catch((err) =>
-            console.error(`Ошибка полноэкранного режима: ${err.message}`),
-          );
-      } else {
-        document.exitFullscreen();
-      }
-    });
+
+// if (xmarkBtn) {
+//   xmarkBtn.addEventListener("click", () => {
+//     console.log();
+//   });
+// }
+function expandBtnOnChangedFormBlock(form) {
+  form.requestFullscreen();
+  if (document.fullscreenElement) {
+    document.exitFullscreen();
+    return;
   }
 }

@@ -206,19 +206,24 @@ button.equal-bottom-left {
 }
 
 .message {
-
   color: #7b7d7e;
   font-size: 25px;
   text-align:center;
-  justify-content: center;
+  padding: 300px 0px 0px 0px;
 }
 
-.finished-hidden:active,
-form.block:active
+.finished-hidden {
+  display: none;
+} 
+
+.finished-hidden.active,
+.form-block.active
  {
   display: block;
-}   
+  height: 100%;
+}    
 
 .form-block-submission.active {
   display: none;
 }
+

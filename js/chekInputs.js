@@ -20,3 +20,5 @@ function OnChangeInput(allInputs, saveBtn, cancelBtn, field) {
     );
   }
 }
+
+function inputReset() {}
