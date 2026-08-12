@@ -36,126 +36,124 @@
           </button>
         </div>
       </div>
-      <section class="form-block active">
-        <section class="form-block-submission">
-          <section class="form-group">
-            <h2>Название</h2>
-            <input
-              type="text"
-              id="title"
-              name="title"
-              value="Норма.АВТ.Потери технологические"
+      <div class="form-block-submission">
+        <section class="form-group">
+          <h2>Название</h2>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            value="Норма.АВТ.Потери технологические"
+            disabled="disabled"
+          />
+          <h2>Тип зависимости</h2>
+          <div class="form-group-dependency-type">
+            <select
+              id="typeOfDependency"
+              name="typeOfDependency"
               disabled="disabled"
-            />
-            <h2>Тип зависимости</h2>
-            <div class="form-group-dependency-type">
-              <select
-                id="typeOfDependency"
-                name="typeOfDependency"
-                disabled="disabled"
-              >
-                <option value="line">Линейный</option>
-                <option value="period">Периодический</option>
-                <option value="exponential">Экспоненциальный</option>
-              </select>
-              <button><i class="fa-regular fa-copy"></i></button>
-            </div>
-            <h2>Тип создания</h2>
-            <input
-              id="typeOfCreation"
-              name="typeOfCreation"
-              type="text"
-              value="Импортированная"
-              disabled="disabled"
-            />
-            <div class="checkbox">
-              <input id="checkbox" name="checkbox" type="checkbox" />
-              <label>Состояние зависимости</label>
-            </div>
-            <h2>Измерено</h2>
-            <input id="measured" name="measured" type="text" />
-            <h2>Согласовано</h2>
-            <input id="agreed" name="agreed" type="text" />
-            <h2>Для пересчета графа</h2>
-            <input
-              id="recalculation"
-              name="recalculation"
-              type="text"
-              value="1234,000"
-            />
-            <div class="grid">
-              <table>
-                <caption>
-                  Объекты левой части
-                </caption>
-                <thead>
-                  <tr>
-                    <th scope="col">Группа</th>
-                    <th scope="col">Объект</th>
-                    <th scope="col">Расположение</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td scope="row"></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td scope="row">Измерение</td>
-                    <td>АВТ.Потери технологические</td>
-                    <td>Числитель</td>
-                  </tr>
-                </tbody>
-                <tfoot>
-                  <tr>
-                    <td scope="row" colspan="3"></td>
-                  </tr>
-                </tfoot>
-              </table>
-              <table>
-                <caption>
-                  Объекты правой части
-                </caption>
-                <thead>
-                  <tr>
-                    <th scope="col">Группа</th>
-                    <th scope="col">Объект</th>
-                    <th scope="col">Расположение</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td scope="row"></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td scope="row">Вход в Узел\Установку</td>
-                    <td>АВТ(7)</td>
-                    <td>Числитель</td>
-                  </tr>
-                </tbody>
-                <tfoot>
-                  <tr>
-                    <td scope="row" colspan="3"></td>
-                  </tr>
-                </tfoot>
-              </table>
-            </div>
-          </section>
-          <section class="buttons-bottom">
-            <button id="cancelBtn" disabled>
-              <i class="fa-solid fa-arrow-rotate-left"></i>Отменить
-            </button>
-            <button id="saveBtn" disabled>
-              <i class="fa-regular fa-floppy-disk"></i>Сохранить
-            </button>
-          </section>
+            >
+              <option value="line">Линейный</option>
+              <option value="period">Периодический</option>
+              <option value="exponential">Экспоненциальный</option>
+            </select>
+            <button><i class="fa-regular fa-copy"></i></button>
+          </div>
+          <h2>Тип создания</h2>
+          <input
+            id="typeOfCreation"
+            name="typeOfCreation"
+            type="text"
+            value="Импортированная"
+            disabled="disabled"
+          />
+          <div class="checkbox">
+            <input id="checkbox" name="checkbox" type="checkbox" />
+            <label>Состояние зависимости</label>
+          </div>
+          <h2>Измерено</h2>
+          <input id="measured" name="measured" type="text" />
+          <h2>Согласовано</h2>
+          <input id="agreed" name="agreed" type="text" />
+          <h2>Для пересчета графа</h2>
+          <input
+            id="recalculation"
+            name="recalculation"
+            type="text"
+            value="1234,000"
+          />
+          <div class="grid">
+            <table>
+              <caption>
+                Объекты левой части
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Группа</th>
+                  <th scope="col">Объект</th>
+                  <th scope="col">Расположение</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td scope="row"></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td scope="row">Измерение</td>
+                  <td>АВТ.Потери технологические</td>
+                  <td>Числитель</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td scope="row" colspan="3"></td>
+                </tr>
+              </tfoot>
+            </table>
+            <table>
+              <caption>
+                Объекты правой части
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Группа</th>
+                  <th scope="col">Объект</th>
+                  <th scope="col">Расположение</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td scope="row"></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td scope="row">Вход в Узел\Установку</td>
+                  <td>АВТ(7)</td>
+                  <td>Числитель</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td scope="row" colspan="3"></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
         </section>
-      </section>
+        <section class="buttons-bottom">
+          <button id="cancelBtn" disabled>
+            <i class="fa-solid fa-arrow-rotate-left"></i>Отменить
+          </button>
+          <button id="saveBtn" disabled>
+            <i class="fa-regular fa-floppy-disk"></i>Сохранить
+          </button>
+        </section>
+      </div>
       <section class="finished-hidden">
-        <h2>"заявка отправлена ✔"</h2>
+        <div class="message">"заявка отправлена ✔"</div>
       </section>
     </div>
   </body>

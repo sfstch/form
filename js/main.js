@@ -7,24 +7,23 @@ document.addEventListener("DOMContentLoaded", function () {
   const xmarkBtn = form.querySelector(".btn-xmark");
   const expandBtn = form.querySelector(".btn-expand");
   const controls = document.querySelector(".header-icons");
-  const formBlock = document.querySelector(".form-block");
-  const finishedHidden = document.querySelector(".finished-hidden");
+  const finishedHidden = document.querySelector(".finished-hidden, h3");
   const formBlockSubmission = document.querySelector(".form-block-submission");
 
-  saveBtn.addEventListener("click", () => onSaveBtnClick(saveBtn, allInputs));
+  saveBtn.addEventListener("click", () => {
+    formBlockPost(finishedHidden, formBlockSubmission);
+    onSaveBtnClick(saveBtn, allInputs);
+  });
   allInputs.forEach((elem) =>
     OnChangeInput(allInputs, saveBtn, cancelBtn, elem),
   );
 
-  saveBtn.addEventListener("click", () =>
-    formBlockPost(formBlock, finishedHidden, formBlockSubmission),
-  );
   xmarkBtn.addEventListener("click", () =>
-    xmarkBtnOnChangedFormBlock(xmarkBtn),
+    xmarkBtnOnChangedFormBlock(finishedHidden, formBlockSubmission, allInputs),
   );
 
   expandBtn.addEventListener("click", () =>
-    expandBtnOnChangedFormBlock(expandBtn),
+    expandBtnOnChangedFormBlock(expandBtn, form),
   );
 });
 
