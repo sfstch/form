@@ -212,3 +212,13 @@ button.equal-bottom-left {
   text-align:center;
   justify-content: center;
 }
+
+.finished-hidden:active,
+form.block:active
+ {
+  display: block;
+}   
+
+.form-block-submission.active {
+  display: none;
+}
