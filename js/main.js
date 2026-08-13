@@ -26,6 +26,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
   cancelBtn.addEventListener("click", () => {
     inputReset(allInputs, saveBtn);
-    recheckInputsAfterCancelBtn(cancelBtn);
   });
 });
