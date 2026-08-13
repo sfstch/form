@@ -25,11 +25,6 @@ function xmarkBtnOnChangedFormBlock(
   finishedHidden.classList.remove("active");
 }
 
-// if (xmarkBtn) {
-//   xmarkBtn.addEventListener("click", () => {
-//     console.log();
-//   });
-// }
 function expandBtnOnChangedFormBlock(form) {
   form.requestFullscreen();
   if (document.fullscreenElement) {

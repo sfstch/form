@@ -21,4 +21,20 @@ function OnChangeInput(allInputs, saveBtn, cancelBtn, field) {
   }
 }
 
-function inputReset() {}
+function inputReset(allInputs, input, field, saveBtn) {
+  console.log(saveBtn);
+  allInputs.forEach((input) => {
+    if (input.type === "checkbox" && checkbox.checked !== false) {
+      checkbox.checked = false;
+    } else if (input.type === "text" && input.disabled !== true) {
+      input.value = "";
+    } else {
+      console.log("поля очищены");
+    }
+  });
+  saveBtn.disabled = false;
+}
+
+function recheckInputsAfterCancelBtn(allInputs, saveBtn, cancelBtn) {
+  checkInputs(allInputs, saveBtn, cancelBtn);
+}

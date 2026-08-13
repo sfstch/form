@@ -23,6 +23,9 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
   expandBtn.addEventListener("click", () => expandBtnOnChangedFormBlock(form));
-});
 
-//checkInputs(allInputs, saveBtn, cancelBtn, xmarkBtn);
+  cancelBtn.addEventListener("click", () => {
+    inputReset(allInputs, saveBtn);
+    recheckInputsAfterCancelBtn(cancelBtn);
+  });
+});
