@@ -21,8 +21,7 @@ function OnChangeInput(allInputs, saveBtn, cancelBtn, field) {
   }
 }
 
-function inputReset(allInputs, input, field, saveBtn) {
-  console.log(saveBtn);
+function inputReset(allInputs, saveBtn) {
   allInputs.forEach((input) => {
     if (input.type === "checkbox" && checkbox.checked !== false) {
       checkbox.checked = false;
@@ -32,9 +31,5 @@ function inputReset(allInputs, input, field, saveBtn) {
       console.log("поля очищены");
     }
   });
-  saveBtn.disabled = false;
-}
-
-function recheckInputsAfterCancelBtn(allInputs, saveBtn, cancelBtn) {
-  checkInputs(allInputs, saveBtn, cancelBtn);
+  saveBtn.disabled = true;
 }
