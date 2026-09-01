@@ -10,6 +10,7 @@
     <script src="js/controls.js"></script>
     <script src="js/chekInputs.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/validation.js"></script>
     <title>Редактирование зависимости</title>
   </head>
   <body>
@@ -68,19 +69,27 @@
             disabled="disabled"
           />
           <div class="checkbox">
-            <input id="checkbox" name="checkbox" type="checkbox" />
+            <input id="checkbox" name="checkbox" type="checkbox" required />
             <label>Состояние зависимости</label>
           </div>
           <h2>Измерено</h2>
-          <input id="measured" name="measured" type="text" />
+          <input id="measured" name="measured" type="text" length="10" />
           <h2>Согласовано</h2>
-          <input id="agreed" name="agreed" type="text" />
+          <input
+            id="agreed"
+            name="agreed"
+            type="text"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4}"
+          />
           <h2>Для пересчета графа</h2>
           <input
             id="recalculation"
             name="recalculation"
             type="text"
             value="1234,000"
+            minlength="4"
+            title="укажите значение с точностью до тысячных"
+            required
           />
           <div class="grid">
             <table>
